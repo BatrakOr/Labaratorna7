@@ -13,7 +13,7 @@ private:
     int size;
 
 public:
-    DoublyLinkedList() : head(nullptr), tail(nullptr), size(0) {}
+    DoublyLinkedList() : head(0), tail(0), size(0) {}
 
     void push_front(T value) {
         auto newNode = std::make_shared<Node<T>>(value);
@@ -47,8 +47,8 @@ public:
         if (!head) throw std::runtime_error("Empty");
 
         head = head->next;
-        if (head) head->prev = nullptr;
-        else tail = nullptr;
+        if (head) head->prev = 0;
+        else tail = 0;
 
         size--;
     }
@@ -57,8 +57,8 @@ public:
         if (!tail) throw std::runtime_error("Empty");
 
         tail = tail->prev;
-        if (tail) tail->next = nullptr;
-        else head = nullptr;
+        if (tail) tail->next = 0;
+        else head = 0;
 
         size--;
     }
