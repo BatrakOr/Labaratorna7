@@ -12,7 +12,7 @@ private:
     int size;
 
 public:
-    SinglyLinkedList() : head(nullptr), size(0) {}
+    SinglyLinkedList() : head(0), size(0) {}
 
     void push_front(T value) {
         auto newNode = std::make_shared<Node<T>>(value);
@@ -46,13 +46,13 @@ public:
         if (!head) throw std::runtime_error("List is empty");
 
         if (!head->next) {
-            head = nullptr;
+            head = 0;
         }
         else {
             auto temp = head;
             while (temp->next->next)
                 temp = temp->next;
-            temp->next = nullptr;
+            temp->next = 0;
         }
         size--;
     }
